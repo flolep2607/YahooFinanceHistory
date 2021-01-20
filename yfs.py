@@ -93,7 +93,7 @@ def get_history_csv(ticker, start_time=00000000000, end_time=int(time()), downlo
     csv_url = DOWNLOAD_URL + "/" + ticker
 
     # make download query
-    response = requests.post(csv_url, params=PAYLOAD)  # , cookies=cookie_jar)
+    response = requests.get(csv_url, params=PAYLOAD)  # , cookies=cookie_jar)
 
     # check if response is not a json error message
     if is_json(response.text):
